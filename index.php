@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <table id="tabla-datos">
+    <table id="tabla-data">
         <thead>
             <tr>
-                <th>ID</th>
+
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
@@ -22,8 +22,8 @@
         <tbody>
         </tbody>
     </table>
-<button id="hola">imprime</button>
-<script src="JS/index.js"></script>
+    <button id="hola">imprime</button>
+    <script src="JS/index.js"></script>
 </body>
 
 
