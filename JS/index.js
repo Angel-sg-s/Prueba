@@ -11,6 +11,8 @@ boton.addEventListener('click', function() {
     });
 });
 
+//Mostrar datos
+
 function imprimirDatosEnTabla(data) {
   let tbody = document.querySelector('#tabla-data tbody');
   tbody.innerHTML = '';
@@ -22,41 +24,14 @@ function imprimirDatosEnTabla(data) {
       <td>${dato.Usuario}</td>
       <td>${dato.Passw}</td>
       <td>${dato.email}</td>
-      <td><button class="${dato.id}" data-id="${dato.id}">Eliminar</button></td>
+      <td><button class="elimiar" onclick='eliminarDato(${dato.id})'">Eliminar</button></td>
       `;
     tbody.appendChild(tr);
   });
 }
 
-function eliminarDato() {
-  let id = this.dataset.id; // Obtener el id del dato a eliminar
-  let url = 'PHP/eliminar.php'; // URL del archivo PHP encargado de eliminar los datos
-
-  // Crear la petición fetch
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: `id=${id}` // Pasar el id como parámetro en el cuerpo de la petición
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    // Si la eliminación fue exitosa, volver a cargar los datos de la tabla
-    if (data.eliminado === true) {
-      fetch('PHP/consulta.php')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          imprimirDatosEnTabla(data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-  })
-  .catch(error => {
-    console.error(error);
-  });
+//Eliminar datos
+function eliminarDato(id) {
+  // <?php require 'PHP/eliminar.php'?> 
+  console.log(id)// URL del archivo PHP encargado de eliminar los datos
 }
