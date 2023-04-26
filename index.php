@@ -13,7 +13,6 @@
     <table id="tabla-data">
         <thead>
             <tr>
-
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
@@ -24,6 +23,7 @@
     </table>
     <button id="hola">imprime</button>
     <script src="JS/index.js"></script>
+    <a href="registro.php">Registro</a>
 </body>
 
 

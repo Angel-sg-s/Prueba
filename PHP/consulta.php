@@ -1,7 +1,7 @@
 <?php
 require 'conexion.php';
 
-$consulta = $conn ->prepare("SELECT Usuario, Passw, email FROM Sesion");
+$consulta = $conn ->prepare("SELECT Usuario, Passw, email, id FROM Sesion");
 $consulta->execute();
 $datos = $consulta ->fetchAll(PDO::FETCH_ASSOC);
 
