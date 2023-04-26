@@ -32,6 +32,29 @@ function imprimirDatosEnTabla(data) {
 
 //Eliminar datos
 function eliminarDato(id) {
-  // <?php require 'PHP/eliminar.php'?> 
-  console.log(id)// URL del archivo PHP encargado de eliminar los datos
+  let url = `PHP/eliminar.php?id=${id}`;
+  
+  // Crear la petición fetch
+  fetch(url, {
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Si la eliminación fue exitosa, volver a cargar los datos de la tabla
+    if (data.eliminado === true) {
+      fetch('PHP/consulta.php')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          imprimirDatosEnTabla(data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
 }
