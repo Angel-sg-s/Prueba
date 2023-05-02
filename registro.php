@@ -9,7 +9,7 @@
 		<input type="text" id="nombre" name="nombre"><br>
 
 		<label for="apellido">contraseña:</label>
-		<input type="text" id="apellido" name="apellido"><br>
+		<input type="password" id="apellido" name="apellido"><br>
 
 		<label for="email">Email:</label>
 		<input type="text" id="email" name="email"><br>
