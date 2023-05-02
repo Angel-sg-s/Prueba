@@ -28,6 +28,6 @@
   }
   
   ?>
-  <a href="http://localhost/Prueba/index.php">regresar</a>
+  <a href="http://localhost/Prueba/index.html">regresar</a>
 </body>
 </html>
